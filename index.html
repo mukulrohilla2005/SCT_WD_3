@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-Tac-Toe | SkillCraft Task 03</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="title">TIC-TAC-TOE</div>
+    <div class="subtitle">SkillCraft Technology · Task 03</div>
+  </div>
+
+  <!-- Mode Selector -->
+  <div class="mode-selector">
+    <button class="mode-btn active" onclick="setMode('pvp')">👥 vs Player</button>
+    <button class="mode-btn" onclick="setMode('pvc')">🤖 vs Computer</button>
+  </div>
+
+  <!-- Difficulty (shown only in PvC mode) -->
+  <div class="diff-selector" id="diffRow" style="display:none;">
+    <span>Difficulty:</span>
+    <button class="diff-btn active" onclick="setDiff('easy')">Easy</button>
+    <button class="diff-btn" onclick="setDiff('medium')">Medium</button>
+    <button class="diff-btn" onclick="setDiff('hard')">Hard</button>
+  </div>
+
+  <!-- Scoreboard -->
+  <div class="scoreboard">
+    <div class="score-card x-card active" id="xCard">
+      <div class="score-label" id="xLabel">Player X</div>
+      <div class="score-symbol">X</div>
+      <div class="score-num" id="xScore">0</div>
+    </div>
+    <div class="vs-block">
+      <div class="vs-text">VS</div>
+      <div class="draw-count" id="drawCount">0 draws</div>
+    </div>
+    <div class="score-card o-card" id="oCard">
+      <div class="score-label" id="oLabel">Player O</div>
+      <div class="score-symbol">O</div>
+      <div class="score-num" id="oScore">0</div>
+    </div>
+  </div>
+
+  <!-- Status Bar -->
+  <div class="status-bar x-turn" id="statusBar">X's TURN</div>
+
+  <!-- Computer Thinking Indicator -->
+  <div class="thinking" id="thinkingDots">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    COMPUTER THINKING...
+  </div>
+
+  <!-- Game Board -->
+  <div class="board-wrapper">
+    <div class="board" id="board">
+      <div class="cell" onclick="handleClick(0)"></div>
+      <div class="cell" onclick="handleClick(1)"></div>
+      <div class="cell" onclick="handleClick(2)"></div>
+      <div class="cell" onclick="handleClick(3)"></div>
+      <div class="cell" onclick="handleClick(4)"></div>
+      <div class="cell" onclick="handleClick(5)"></div>
+      <div class="cell" onclick="handleClick(6)"></div>
+      <div class="cell" onclick="handleClick(7)"></div>
+      <div class="cell" onclick="handleClick(8)"></div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <button class="btn primary" onclick="resetGame()">New Game</button>
+    <button class="btn" onclick="resetScores()">Reset Scores</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
